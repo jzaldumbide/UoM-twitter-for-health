@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Statistics</title>
+	<!-- Load jQuery -->
+	<script language="javascript" type="text/javascript" 
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js">
+</script>
+<!-- Load Google JSAPI -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+	google.load('visualization', '1', {'packages':['annotationchart']});
+
+
+	google.setOnLoadCallback(getData);
+
+	var counter=0;
+	var tweetdate;  
+	
+
+	function getData(){
+	   // $.getJSON('http://127.0.0.1:9200/brisbane/_search?&q=dengue&size=10000', //aqui personalizar
+	   	$.getJSON('http://115.146.93.161:9200/melbourneindex/_search?&q=flu&size=10000', //remote
+	    	function(data) {
+	    		console.log(data.hits.total);
+
+	    		counter=data.hits.total;
+	    		console.log(counter);
+	    		drawChart(data.hits.hits);
+	    	});
+
+	}
+
+	function drawChart(data) {
+		var datatodraw = new google.visualization.DataTable();
+		var temp1=[];
+		datatodraw.addColumn('date', 'Date');
+		
+		datatodraw.addColumn('number', 'repetitions');
+		//datatodraw.addRows(counter);
+		var arraydates=[];
+		var  count = {}; 
+
+		for(var i=0;i<counter-1; i++){
+			var dateparsed=data[i]._source.created_at
+			var v=dateparsed.split(' ');
+			var mydate = v[1]+"/"+v[2]+"/"+v[5];			
+			//console.log(mydate);	
+			arraydates.push(mydate);
+		}
+
+		//console.log(arraydates);
+		arraydates.forEach(function(i) { count[i] = (count[i]||0)+1;  });
+		//console.log(typeof count);
+		//var v=count.split(' ');
+		
+
+
+		
+		
+		for(key in count) {
+
+			
+			if(count.hasOwnProperty(key)) {
+				var value = count[key];
+		        //do something with value;
+
+		        console.log(key);
+		       
+		       var mydate= new Date(key);
+		       console.log(mydate);
+
+		       console.log(value);
+		       // datatodraw.setValue(i,0,datefinal);
+		       datatodraw.addRow();  // Add an empty row
+		       datatodraw.addRow([mydate, value]);
+
+		   }
+		}
+
+		
+
+		var options = {
+		    curveType: 'function',
+		    legend: { position: 'bottom' }
+		  };
+		
+
+		var chart = new	google.visualization.LineChart(document.getElementById('chart_div'));
+		chart.draw(datatodraw, options);
+	}
+
+</script>
+</head>
+<body>
+	<div id="chart_div" style="width: 450px; height: 250px;">
+	</div>
+</body>
+</html>

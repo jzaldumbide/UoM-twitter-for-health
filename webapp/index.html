@@ -1,0 +1,128 @@
+  <!doctype html>
+  <html>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Twitter for Health</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  	<!-- Latest compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  	<!-- Optional theme -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  	
+
+  	<!-- Latest compiled and minified JavaScript -->
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  	<script>
+  	      function load_home(){
+  	            document.getElementById("content").innerHTML='<object type="text/html" data="home.html" ></object>';
+  	  }
+  	</script>
+  	
+
+  	<script>
+  		$('.dropdown-toggle').dropdown
+
+
+  	</script>
+  	
+  </head>
+
+  <body>
+  	<br>
+  	<!-- <div class="header"><h1 align="center">Tweet for Health<h1></div> -->
+  	<div class="container-fluid" >
+    <div class="btn-group">
+    <button type="button" class="btn btn-primary">
+    
+    <a href="index.html">Home</a>
+    
+    </button>
+    </div>
+  		<div class="btn-group">
+
+  			<button type="button" class="btn btn-primary">Cities</button>
+  			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+  				<span class="caret"></span>
+  				<span class="sr-only">Cities</span>
+  			</button>
+  			<ul class="dropdown-menu" role="menu">
+  				<li><a href="cities/sydney/welcomesydney.html" target="resultsframe">Sydney</a></li>
+  				<li class="divider"></li>
+  				<li><a href="cities/melbourne/welcomemelbourne.html" target="resultsframe">Melbourne</a></li>
+  				<li class="divider"></li>
+  				<li><a href="cities/brisbane/welcomebrisbane.html" target="resultsframe">Brisbane</a></li>
+
+  			</ul>
+  		</div>
+
+  		<div class="btn-group">
+  			<button type="button" class="btn btn-primary">Search by City</button>
+  			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+  				<span class="caret"></span>
+  				<span class="sr-only">Case Studies</span>
+  			</button>
+  			<ul class="dropdown-menu" role="menu">
+  				<li><a href="cities/melbourne/searchmelbourne.html" target="resultsframe">
+  					Search tweets on Melbourne</a></li>
+  					<li class="divider"></li>
+  					<li><a href="cities/sydney/searchsydney.html" target="resultsframe">
+  						Search tweets on Sydney</a></li>
+  						<li class="divider"></li>
+  						<li><a href="cities/brisbane/searchbrisbane.html" target="resultsframe">
+  							Search tweets on Brisbane</a></li>
+
+  						</ul>
+  					</div>
+
+
+  					<div class="btn-group">
+  						<button type="button" class="btn btn-primary">Clusters</button>
+  						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+  							<span class="caret"></span>
+  							<span class="sr-only">Clusters</span>
+  						</button>
+  						<ul class="dropdown-menu" role="menu">
+  							<li><a href="http://115.146.93.32:5984/_utils" target="resultsframe">
+  								Personal: 115.146.93.32:5984</a></li>
+  								<li class="divider"></li>
+  								<li><a href="http://115.146.93.161:5984/_utils" target="resultsframe">
+  									Instance3: 115.146.93.161:5984(	8 Ram and 80 HDD )</a></li>
+  									<li class="divider"></li>
+  									<li><a  href="http://115.146.93.176:5984/_utils" target="resultsframe">
+  										Instance1: 115.146.93.176:5984( 4 Ram and 20 HDD )</a></li>
+  										<li class="divider"></li>
+  										<li><a href="http://115.146.93.106:5984/_utils" target="resultsframe">
+  											Instance2: 115.146.93.106:5984( 4 Ram and 20 HDD )</a></li>
+
+  										</ul>
+  									</div>
+
+
+
+  									<div class="container-fluid" style="">
+  										
+  										<div class="row clearfix">
+  											<div class="col-md-12 column">
+  												<div class="row clearfix">
+
+<br>
+  													<iframe name="resultsframe" src="welcome.html" width="100%" height="650px"></iframe>
+  													
+  											</div>
+  										</div>
+  									</div>
+
+
+  										<!-- <div class="footer"><p align="right">jzaldumbide@student.unimelb.edu.au</p></div> -->
+
+  									</div>
+
+  									<!-- -->
+
+
+
+  								</body>
+  								</html>
